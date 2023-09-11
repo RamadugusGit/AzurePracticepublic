@@ -26,3 +26,15 @@ df = spark.read.format(file_type) \
   .load(file_location)
 
 display(df)
+
+# COMMAND ----------
+
+df.printSchema()
+from pyspark.sql.functions import dense_rank,desc
+from pyspark.sql.window import Window
+w0 = Window.partitionBy(df.date).orderBy(df.trips.desc())
+df.withColumn('dense', dense_rank().over(w0)).show()
+
+# COMMAND ----------
+
+
