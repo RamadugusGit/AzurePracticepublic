@@ -1,10 +1,5 @@
 # Starter pipeline
-- task: PublishBuildArtifacts@1
-  inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'drop'
-    publishLocation: 'FilePath'
-    TargetPath: '/mnt/data/Raw data'
+
 # Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
@@ -29,4 +24,4 @@ steps:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'drop'
     publishLocation: 'FilePath'
-    TargetPath: 'https://github.com/RamadugusGit/AzurePracticepublic/tree/master'
+    TargetPath: '/mnt/data/Raw data'
